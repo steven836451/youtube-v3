@@ -113,7 +113,7 @@ export default {
     white-space: pre-wrap;
   }
 }
-.vjs-tech{
+.video-js .vjs-tech{
   position: relative;
 }
 </style>
