@@ -101,6 +101,7 @@ export default {
   margin-bottom: 20px;
 }
 .bottom {
+  padding:0 15px;
   width: 100%;
   h1 {
     margin-bottom: 20px;
