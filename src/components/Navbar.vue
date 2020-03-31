@@ -9,8 +9,8 @@
       </div>
 
       <nav class="nav">
-        <router-link to="/helloworld">首頁</router-link>
-        <router-link to="/collect">我的最愛</router-link>
+        <router-link to="/helloworld" class="nav-item">首頁</router-link>
+        <router-link to="/collect" class="nav-item">我的最愛</router-link>
       </nav>
     </div>
   </div>
@@ -36,6 +36,7 @@
   z-index: 10;
 }
 .logo {
+  margin-left: 15px;
   a {
     display: flex;
     text-decoration: none;

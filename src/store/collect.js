@@ -30,8 +30,8 @@ export default {
                 return state.favoriteItemsId.includes(item.id)
             })
         },
-        favoritePageNum: (state, getters, rootState) =>
-            Math.ceil(getters.favoriteItems.length / rootState.HomeModule.itemNumPerPage),
+        favoritePageNum: (state, getters, rootState) =>{
+           return Math.ceil(getters.favoriteItems.length / rootState.HomeModule.itemNumPerPage)},
         renderFavoritePage: (state, getters, rootState) => {
             return getters.favoriteItems.filter((item, index) => {
                 return index >= (state.currentPage - 1) * rootState.HomeModule.itemNumPerPage &&

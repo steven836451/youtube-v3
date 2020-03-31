@@ -12,7 +12,7 @@ export default({
     mutations:{
         SETITEM(state,payload){
             state.setItem = payload
-            console.log(state.setItem)
+            // console.log(state.setItem)
             localStorage.setItem('saveItem', JSON.stringify(state.setItem))
         }
     },

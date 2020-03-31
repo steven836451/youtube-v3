@@ -3,15 +3,19 @@
     <div class="box">
       <div class="top">
         <video
-        id="myVideo"
-        class="video-js vjs-big-play-centered"
-        style="width: 100%;height: auto"
-        ref="videoPlayer"
-      ></video>
+          id="myVideo"
+          class="video-js vjs-big-play-centered"
+          style="width: 100%;height: auto"
+          ref="videoPlayer"
+        ></video>
       </div>
       <div class="bottom">
+        <div class="bottom-box">
           <h1 class="text">{{setItem.snippet.title}}</h1>
-          <p class="text"><pre>{{setItem.snippet.description}}</pre></p>
+          <!-- <p class="text"> -->
+          <pre>{{setItem.snippet.description}}</pre>
+          <!-- </p> -->
+        </div>
       </div>
     </div>
   </div>
@@ -24,7 +28,7 @@ import videojs from "video.js";
 export default {
   data() {
     return {
-      myVideo: null,
+      myVideo: null
     };
   },
   methods: {
@@ -58,7 +62,7 @@ export default {
           timeDivider: false,
           durationDisplay: false,
           progressControl: true,
-          customControlSpacer: true,
+          customControlSpacer: true
         }
       });
     }
@@ -70,16 +74,14 @@ export default {
   mounted() {
     this.getVideo();
   },
-  beforeDestroy(){
-  },
-  destroyed(){
+  beforeDestroy() {},
+  destroyed() {
     this.myVideo.dispose();
   }
 };
 </script>
 
 <style lang="scss" scoped>
-
 .container {
   position: relative;
   max-width: 1440px;
@@ -89,8 +91,7 @@ export default {
   margin-bottom: 60px;
 }
 .box {
-  padding: 20px;
-  padding-top: 80px;
+  padding:80px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -101,20 +102,37 @@ export default {
   margin-bottom: 20px;
 }
 .bottom {
-  padding:0 15px;
+  word-wrap: break-word;
   width: 100%;
   h1 {
     margin-bottom: 20px;
   }
   p {
     font-size: 18px;
-    line-height: 1.2yrem;
+    line-height: 1.2rem;
   }
   pre {
     white-space: pre-wrap;
+    font-size: 18px;
+    line-height: 1.2rem;
   }
 }
-.video-js .vjs-tech{
+.bottom-box {
+  padding: 0 15px;
+}
+.video-js .vjs-tech {
   position: relative;
+}
+
+@media (max-width: 960px) {
+  .box{
+    padding: 60px 0 20px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .box{
+    padding: 60px 0 20px 0;
+  }
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div class="page">
-    <div class="firstPage">
+    <!-- <div class="firstPage">
       <a href @click.prevent="getCurrentPage(1)">
         <i class="fas fa-fast-backward"></i>
       </a>
-    </div>
+    </div> -->
     <div class="prev">
       <a href @click.prevent="getCurrentPage(currentPage-1)">
         <i class="fas fa-angle-double-left"></i>
@@ -12,9 +12,13 @@
     </div>
     <div>
       <ul class="pageNum">
-        <li v-for="num in pageNum" :key="num" @click.prevent="getCurrentPage(num)">
-          <a href>{{num}}</a>
+        <li @click.prevent="getCurrentPage(1)" v-if="currentPage-3 >= 1"><a href>1</a></li>
+        <li v-if="currentPage-3 >= 1">...</li>
+        <li v-for="num in filterPageNum" :key="num" @click.prevent="getCurrentPage(num)">
+          <a href :class="{selectColor : num == currentPage}">{{num}}</a>
         </li>
+        <li v-if="currentPage+3 <= pageNum">...</li>
+        <li @click.prevent="getCurrentPage(pageNum)" v-if="currentPage+3 <= pageNum"><a href>{{pageNum}}</a></li>
       </ul>
     </div>
     <div class="next">
@@ -22,11 +26,11 @@
         <i class="fas fa-angle-double-right"></i>
       </a>
     </div>
-    <div class="lastPage">
+    <!-- <div class="lastPage">
       <a href @click.prevent="getCurrentPage(pageNum)">
         <i class="fas fa-fast-forward"></i>
       </a>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -34,7 +38,7 @@
 import { mapActions, mapGetters, mapMutations, mapState } from "vuex";
 
 export default {
-  props: ["pageNum", "currentPage"],
+  props: ["pageNum", "currentPage","filterPageNum"],
   data() {
     return {};
   },
@@ -61,7 +65,9 @@ export default {
   width: 100%;
   font-size: 24px;
   display: flex;
-  color: black;
+  a{
+    color: rgb(107, 107, 107);
+  }
 }
 .pageNum {
   display: flex;
@@ -78,15 +84,19 @@ export default {
 .next {
   margin: 0 20px;
 }
-
+.selectColor{
+  color: black !important; 
+  font-weight: bold;
+  text-decoration: underline !important;
+}
 @media (max-width: 960px) {
   .pageNum {
     li {
       margin: 0 15px;
     }
   }
-  .firstPage,
-  .lastPage,
+  // .firstPage,
+  // .lastPage,
   .prev,
   .next {
     margin: 0 15px;
@@ -99,8 +109,8 @@ export default {
       margin: 0 10px;
     }
   }
-  .firstPage,
-  .lastPage,
+  // .firstPage,
+  // .lastPage,
   .prev,
   .next {
     margin: 0 10px;

@@ -25,6 +25,7 @@
       class="pagination"
       :page-num="pageNumSelect"
       :current-page="currentPageSelect"
+      :filter-page-num="filterPageNum"
       v-if="renderPageSelect.length > 0"
     ></Page>
   </div>
@@ -35,7 +36,7 @@ import { mapActions, mapGetters, mapMutations, mapState } from "vuex";
 import Page from "./Page";
 
 export default {
-  props: ["renderPageSelect", "pageNumSelect", "currentPageSelect"],
+  props: ["renderPageSelect", "pageNumSelect", "currentPageSelect","filterPageNum"],
   components: {
     Page
   },
@@ -43,6 +44,7 @@ export default {
     return {};
   },
   methods: {
+    ...mapActions("HomeModule", ["getData"]),
     favoriteToggle(id, event) {
       this.$store.commit("CollectModule/FAVORITETOGGLE", { id, event });
     },
@@ -62,7 +64,9 @@ export default {
     ...mapState("CollectModule", ["favoriteItemsId"])
   },
   watch: {},
-  created() {}
+  created() {
+    this.getData();
+  }
 };
 </script>
 
