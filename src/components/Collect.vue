@@ -6,8 +6,8 @@
       :current-page-select="currentPageSelect"
       :filter-page-num="filterPageNum"
     ></RenderContent>
-    <div class="blank">
-      <div class="container">
+    <div class="blank" v-if="favoriteItems == 0">
+      <div class="blankBox">
         <p>無任何收藏</p>
         <div>
           <router-link to="/helloworld">前往首頁</router-link>
@@ -84,7 +84,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.blankBox {
   position: relative;
   max-width: 500px;
   width: 100%;
