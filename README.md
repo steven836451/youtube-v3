@@ -12,7 +12,7 @@ https://steven836451.github.io/youtube-v3/
 4. 使用GoogleAPIs - YouTubeV3
 5. ISO 8601時間格式"PTxxHxxMxxS"持續時間轉換
 6. 以LocalStorage儲存我的最愛影片
-7. 分頁若超過5頁以"..."表示之分頁邏輯
+7. 若加入我的最愛後以實心愛心表示，重整後不會消失
 8. RWD響應式網頁設計
 9. 使用FontAwesome Icon
 
