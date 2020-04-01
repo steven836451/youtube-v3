@@ -3,6 +3,7 @@ https://steven836451.github.io/youtube-v3/
 ![alt 文字](https://upload.cc/i1/2020/04/01/XFme4j.png "預覽")
 ![alt 文字](https://upload.cc/i1/2020/04/01/xiYyX4.png "預覽")
 ![alt 文字](https://upload.cc/i1/2020/04/01/qcoOCz.png "預覽")
+
 ### 技能包含
 
 1. 使用Vue Cli製作網頁
@@ -17,7 +18,7 @@ https://steven836451.github.io/youtube-v3/
 
 ### 未來展望
 
-1. 更加熟悉AJAX使用方式
+1. CSS版面優化
 2. 加強自身ES6語法使用
 3. 提升自我技能以及簡化程式碼
 
